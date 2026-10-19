@@ -1,6 +1,6 @@
 cask "transcrio" do
-  version "0.1.0"
-  sha256 "5b1062cc8f7f78422e77e86286c6ee72c796a03fe8e6d1b9b4ed8a3eccc236a9"
+  version "0.1.1"
+  sha256 "285a83f4c10d9fd83f0f0ca49b8b3171db38258140ef5dd78c465538db67ec22"
 
   url "https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/Transcrio-#{version}.dmg"
   name "Transcrio"
@@ -30,9 +30,10 @@ cask "transcrio" do
   ]
 
   caveats <<~EOS
-    Transcrio runs the `transcribe` command-line tool. Install it once with:
-      uv tool install --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/transcribe-#{version}-py3-none-any.whl
-    After a Transcrio upgrade, run it again with --force.
+    Transcrio runs the `transcribe` command-line tool. Open Transcrio and click
+    "Install Command-Line Tool"; after an upgrade it offers "Update Command-Line Tool".
+    To install it by hand instead:
+      uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/transcribe-#{version}-py3-none-any.whl
 
     Transcrio is not notarized. The first time you open it, macOS blocks it:
       System Settings › Privacy & Security › "Transcrio" was blocked… › Open Anyway

@@ -12,11 +12,16 @@ brew install --cask gitkeniwo/transcrio/transcrio
 
 Or download the DMG from [Releases](https://github.com/gitkeniwo/homebrew-transcrio/releases/latest), open it and drag Transcrio into Applications.
 
-Transcrio runs the `transcribe` command-line tool, which each release ships as a wheel. Install it once with [uv](https://docs.astral.sh/uv/):
+Transcrio runs the `transcribe` command-line tool, which it installs itself: open Transcrio and click **Install Command-Line Tool**. It needs [uv](https://docs.astral.sh/uv/) and `ffmpeg`; the cask installs both, and with the DMG you install them yourself:
 
 ```sh
-brew install uv ffmpeg   # the cask installs these for you
-uv tool install --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.1.0/transcribe-0.1.0-py3-none-any.whl
+brew install uv ffmpeg
+```
+
+To install the command-line tool by hand instead (each release also ships it as a wheel):
+
+```sh
+uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.1.1/transcribe-0.1.1-py3-none-any.whl
 ```
 
 Requires macOS 14 (Sonoma) or later on Apple silicon.
@@ -30,12 +35,13 @@ Speech models are downloaded on first use (Transcrio › Models) into `~/.cache/
 ## Upgrade / uninstall
 
 ```sh
-brew update && brew upgrade --cask transcrio
-uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.1.0/transcribe-0.1.0-py3-none-any.whl
+brew update && brew upgrade --cask transcrio   # then click Update Command-Line Tool in Transcrio
 
 brew uninstall --cask transcrio          # keep settings and history
 brew uninstall --zap --cask transcrio    # also remove settings and run history
 uv tool uninstall transcribe
 ```
+
+Transcrio offers **Update Command-Line Tool** when the installed `transcribe` doesn't match its version. By hand, after an upgrade: `uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.1.1/transcribe-0.1.1-py3-none-any.whl`.
 
 `--zap` leaves the downloaded models in `~/.cache/huggingface`; remove them in Transcrio › Models before uninstalling if you want the space back.
