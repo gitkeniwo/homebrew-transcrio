@@ -1,6 +1,6 @@
 cask "transcrio" do
-  version "0.1.1"
-  sha256 "285a83f4c10d9fd83f0f0ca49b8b3171db38258140ef5dd78c465538db67ec22"
+  version "0.2.0"
+  sha256 "db7796c12bae7ffd3c93abdc53cb68d254122e34e738c79740e7e3d547a99a24"
 
   url "https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/Transcrio-#{version}.dmg"
   name "Transcrio"
