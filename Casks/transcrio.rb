@@ -1,11 +1,11 @@
 cask "transcrio" do
-  version "0.2.0"
-  sha256 "db7796c12bae7ffd3c93abdc53cb68d254122e34e738c79740e7e3d547a99a24"
+  version "0.2.1"
+  sha256 "99fc7764ee6d24d8b304ef085ab6db89c34936a4fafd570bcdd3f2c2c8465d1d"
 
-  url "https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/Transcrio-#{version}.dmg"
+  url "https://github.com/gitkeniwo/transcrio/releases/download/v#{version}/Transcrio-#{version}.dmg"
   name "Transcrio"
   desc "Local audio and video transcription with Qwen3-ASR on Apple silicon"
-  homepage "https://github.com/gitkeniwo/homebrew-transcrio"
+  homepage "https://github.com/gitkeniwo/transcrio"
 
   livecheck do
     url :url
@@ -33,7 +33,7 @@ cask "transcrio" do
     Transcrio runs the `transcribe` command-line tool. Open Transcrio and click
     "Install Command-Line Tool"; after an upgrade it offers "Update Command-Line Tool".
     To install it by hand instead:
-      uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v#{version}/transcribe-#{version}-py3-none-any.whl
+      uv tool install --force --python 3.12 https://github.com/gitkeniwo/transcrio/releases/download/v#{version}/transcribe-#{version}-py3-none-any.whl
 
     Transcrio is not notarized. The first time you open it, macOS blocks it:
       System Settings › Privacy & Security › "Transcrio" was blocked… › Open Anyway

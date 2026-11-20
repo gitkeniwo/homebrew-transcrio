@@ -2,7 +2,7 @@
 
 # Transcrio
 
-Homebrew tap and releases for **Transcrio**, a macOS app for local audio and video transcription. Drop in files, and Transcrio transcribes them on your Mac with Qwen3-ASR (MLX), and exports text, SRT, VTT and JSON. Nothing leaves your machine.
+Homebrew tap for **[Transcrio](https://github.com/gitkeniwo/transcrio)**, a macOS app for local audio and video transcription. Drop in files, and Transcrio transcribes them on your Mac with Qwen3-ASR (MLX), and exports text, SRT, VTT and JSON. Nothing leaves your machine.
 
 ## Install
 
@@ -10,7 +10,7 @@ Homebrew tap and releases for **Transcrio**, a macOS app for local audio and vid
 brew install --cask gitkeniwo/transcrio/transcrio
 ```
 
-Or download the DMG from [Releases](https://github.com/gitkeniwo/homebrew-transcrio/releases/latest), open it and drag Transcrio into Applications.
+Or download the DMG from [Releases](https://github.com/gitkeniwo/transcrio/releases/latest), open it and drag Transcrio into Applications.
 
 Transcrio runs the `transcribe` command-line tool, which it installs itself: open Transcrio and click **Install Command-Line Tool**. It needs [uv](https://docs.astral.sh/uv/) and `ffmpeg`; the cask installs both, and with the DMG you install them yourself:
 
@@ -21,7 +21,7 @@ brew install uv ffmpeg
 To install the command-line tool by hand instead (each release also ships it as a wheel):
 
 ```sh
-uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.2.0/transcribe-0.2.0-py3-none-any.whl
+uv tool install --force --python 3.12 https://github.com/gitkeniwo/transcrio/releases/download/v0.2.1/transcribe-0.2.1-py3-none-any.whl
 ```
 
 Requires macOS 14 (Sonoma) or later on Apple silicon.
@@ -42,6 +42,6 @@ brew uninstall --zap --cask transcrio    # also remove settings and run history
 uv tool uninstall transcribe
 ```
 
-Transcrio offers **Update Command-Line Tool** when the installed `transcribe` doesn't match its version. By hand, after an upgrade: `uv tool install --force --python 3.12 https://github.com/gitkeniwo/homebrew-transcrio/releases/download/v0.2.0/transcribe-0.2.0-py3-none-any.whl`.
+Transcrio offers **Update Command-Line Tool** when the installed `transcribe` doesn't match its version. By hand, after an upgrade: `uv tool install --force --python 3.12 https://github.com/gitkeniwo/transcrio/releases/download/v0.2.1/transcribe-0.2.1-py3-none-any.whl`.
 
 `--zap` leaves the downloaded models in `~/.cache/huggingface`; remove them in Transcrio › Models before uninstalling if you want the space back.
